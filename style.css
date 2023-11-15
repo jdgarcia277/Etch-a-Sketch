@@ -1,0 +1,12 @@
+#playground {
+    height: 960px;
+    width: 960px;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.playground-container{
+    display: flex;
+    justify-content: center;
+}
