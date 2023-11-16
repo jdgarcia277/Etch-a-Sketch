@@ -93,12 +93,78 @@ function getScreenSize(){
 
 }
 
+function getColor(){
+
+    let colorNum;
+    const colorDisplayNode = document.querySelector(".color-display");
+    const colorTextValue = colorDisplayNode.textContent;
+
+    switch (colorTextValue){
+        case "White":
+            colorNum = 1;
+            break;
+        case "Red":
+            colorNum = 2;
+            break;
+        case "Green":
+            colorNum = 3;
+            break;
+        case "Blue":
+            colorNum = 4;
+            break;
+        case "Yellow":
+            colorNum = 5;
+            break;
+    }
+    return colorNum;
+}
+
+function changeColor(){
+    //read current color
+    let colorNum = getColor();
+
+    const colorDisplayNode = document.querySelector(".color-display");
+
+    if (colorNum < 5){
+        colorNum++;
+    }
+    else {
+        colorNum = 1;
+    }
+
+    colorDisplayNode.textContent = "";
+
+    switch (colorNum){
+        case 1: 
+            colorDisplayNode.textContent = "White";
+            break;
+        case 2:
+            colorDisplayNode.textContent = "Red";
+            break;
+        case 3:
+            colorDisplayNode.textContent = "Green";
+            break;
+        case 4:
+            colorDisplayNode.textContent = "Blue";
+            break;
+        case 5:
+            colorDisplayNode.textContent = "Yellow";
+            break;
+    }
+}
+
 //event listener for screen-size
 const leftButton = document.querySelector(".left-control");
 if (leftButton !== null) {
     leftButton.addEventListener("click", changeScreenSize);
 }
 
+//event listener for color change
+const rightButton = document.querySelector(".right-control");
+if (rightButton !== null){
+    rightButton.addEventListener("click", changeColor);
+}
+
 document.addEventListener("DOMContentLoaded", (e) => {
-    changeScreenSize();
+    createDivs(16);
 })
