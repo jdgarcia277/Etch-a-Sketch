@@ -1,12 +1,78 @@
 #playground {
-    height: 960px;
-    width: 960px;
+    height: 480px;
+    width: 480px;
     display: flex;
     flex-wrap: wrap;
     
 }
 
 .playground-container{
+    display: flex;
+    justify-content: center;
+}
+
+.black-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    width: 700px;
+    background: linear-gradient( to right, black, #303030, black);
+    margin-top: 25px;
+    border-radius: 10px;
+    
+}
+
+.control-container{
+    height: 100px;
+    width: 700px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-control, .right-control {
+    height: 100px;
+    width: 100px;
+    background: linear-gradient( to right, black,  #262626);
+    border-radius: 50%;
+}
+
+.left-screen, .right-screen {
+    height: 50px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #C7CAA1,  #e2e3ce) ;
+    box-sizing: border-box;
+    border: 1px solid black;
+    color: black;
+}
+
+.middle-icon {
+    height: 50px;
+    width: 50px;
+    background: linear-gradient( to right, black,  #262626);
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+}
+
+.white-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 750px;
+    width: 800px;
+    background: linear-gradient(to right, silver, #8F8B8B );
+    box-shadow: 5px 5px black;
+    border-radius: 15px;
+}
+
+.game-container {
     display: flex;
     justify-content: center;
 }
