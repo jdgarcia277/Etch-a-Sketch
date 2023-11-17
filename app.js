@@ -16,6 +16,29 @@ function createDivs(number){
         div.style.border = "1px solid #286A96";
         div.style.backgroundColor = "#2D2D2D";
 
+        div.addEventListener("mouseover", function(){
+            let colorNum = getColor();
+            let color;
+            switch (colorNum){
+                case 1: 
+                    color = "White";
+                    break;
+                case 2:
+                    color = "Red";
+                    break;
+                case 3:
+                    color = "Green";
+                    break;
+                case 4:
+                    color = "Blue";
+                    break;
+                case 5:
+                    color = "Yellow";
+                    break;
+            }
+            div.style.backgroundColor = color
+        })
+
         parent.appendChild(div);
     }
    
