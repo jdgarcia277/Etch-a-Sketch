@@ -73,6 +73,10 @@ body {
     color: aliceblue;
 }
 
+.icon, .size-display, .color-display {
+    pointer-events: none;
+}
+
 .white-box {
     display: flex;
     justify-content: center;

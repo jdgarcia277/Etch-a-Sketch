@@ -74,6 +74,28 @@ function changeScreenSize(){ //uses getScreenSize() to cycle through screen size
     }
 }
 
+function clearScreen(){
+    
+    let screenNum = getScreenSize();
+    switch (screenNum){
+        case 1: 
+            createDivs(16);
+            break;
+        case 2:
+            createDivs(20);
+            break;
+        case 3:
+            createDivs(10);
+            break;
+        case 4:
+            createDivs(12);
+            break;
+        case 5:
+            createDivs(14);
+            break;
+    }
+}
+
 function getScreenSize(){ //returns screenNum for what screen size says it currently is
 
     let screenNum;
@@ -167,6 +189,11 @@ if (rightButton !== null){
     rightButton.addEventListener("click", changeColor);
 }
 
+//event listener for clear button
+const clearButton = document.querySelector(".middle-icon");
+if(clearButton !== null){
+    clearButton.addEventListener("click", clearScreen);
+}
 //initial loading event 
 document.addEventListener("DOMContentLoaded", (e) => {
     createDivs(16);
