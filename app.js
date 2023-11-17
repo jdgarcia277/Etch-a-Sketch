@@ -1,12 +1,9 @@
-function createDivs(number){
+function createDivs(number){ //creates board on playground to selected square grid amount ex: 16 is 16x16
 
     let divSize = 480/number;
     let totalDivs = number * number;
     let parent = document.querySelector("#playground");
-
-    //clear previous div's
-    parent.innerHTML = '';
-    
+    parent.innerHTML = ''; //clear previous divs
     for (let i = 1; i <= totalDivs; i ++){
 
         let div = document.createElement("div");
@@ -15,7 +12,6 @@ function createDivs(number){
         div.style.boxSizing = "border-box";
         div.style.border = "1px solid #286A96";
         div.style.backgroundColor = "#2D2D2D";
-
         div.addEventListener("mouseover", function(){
             let colorNum = getColor();
             let color;
@@ -38,28 +34,22 @@ function createDivs(number){
             }
             div.style.backgroundColor = color
         })
-
         parent.appendChild(div);
     }
-   
 }
 
-function changeScreenSize(){
+function changeScreenSize(){ //uses getScreenSize() to cycle through screen sizes when button is clicked
 
     //read current screen size
     let screenNum = getScreenSize();
-
     const screenDisplayNode = document.querySelector(".size-display");
-
     if (screenNum < 5){
         screenNum++;
     }
     else {
         screenNum = 1;
     }
-
     screenDisplayNode.textContent = "";
-
     switch (screenNum){
         case 1: 
             screenDisplayNode.textContent = "16 x 16";
@@ -82,16 +72,13 @@ function changeScreenSize(){
             createDivs(14);
             break;
     }
-
-
 }
 
-function getScreenSize(){
+function getScreenSize(){ //returns screenNum for what screen size says it currently is
 
     let screenNum;
     const screenDisplayNode = document.querySelector(".size-display");
     const screenTextValue = screenDisplayNode.textContent;
-
     switch (screenTextValue){
 
         case "16 x 16": 
@@ -109,19 +96,15 @@ function getScreenSize(){
         case "14 x 14":
             screenNum = 5;
             break;
-        
     }
-
     return screenNum;
-
 }
 
-function getColor(){
+function getColor(){ //returns colorNum for what display says current color is
 
     let colorNum;
     const colorDisplayNode = document.querySelector(".color-display");
     const colorTextValue = colorDisplayNode.textContent;
-
     switch (colorTextValue){
         case "White":
             colorNum = 1;
@@ -142,21 +125,17 @@ function getColor(){
     return colorNum;
 }
 
-function changeColor(){
-    //read current color
+function changeColor(){ //uses getColor() to cycle through established colors
+    
     let colorNum = getColor();
-
     const colorDisplayNode = document.querySelector(".color-display");
-
     if (colorNum < 5){
         colorNum++;
     }
     else {
         colorNum = 1;
     }
-
     colorDisplayNode.textContent = "";
-
     switch (colorNum){
         case 1: 
             colorDisplayNode.textContent = "White";
@@ -188,6 +167,7 @@ if (rightButton !== null){
     rightButton.addEventListener("click", changeColor);
 }
 
+//initial loading event 
 document.addEventListener("DOMContentLoaded", (e) => {
     createDivs(16);
 })
